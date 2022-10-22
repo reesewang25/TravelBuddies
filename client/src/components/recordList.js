@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
- 
+import Box from "./box.js"
+
 const Record = (props) => (
  <tr>
    <td>{props.record.name}</td>
-   <td>{props.record.position}</td>
-   <td>{props.record.level}</td>
+   <td>{props.record.phoneNumber}</td>
+   <td>{props.record.gtEmail}</td>
+   <td>{props.record.date}</td>
+   <td>{props.record.leavingTimeFrom}</td>
+   <td>{props.record.leavingTimeTo}</td>
+   <td>{props.record.flightTime}</td>
+   <td>{props.record.location}</td>
+   <td>{props.record.comment}</td>
    <td>
      <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
      <button className="btn btn-link"
@@ -21,6 +28,11 @@ const Record = (props) => (
  
 export default function RecordList() {
  const [records, setRecords] = useState([]);
+ const r=records.map(item=>{
+      return (
+        <Box item={item}/>
+      )
+ })
  
  // This method fetches the records from the database.
  useEffect(() => {
@@ -67,19 +79,14 @@ export default function RecordList() {
  
  // This following section will display the table with the records of individuals.
  return (
-   <div>
-     <h3>Record List</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
-       <thead>
-         <tr>
-           <th>Name</th>
-           <th>Position</th>
-           <th>Level</th>
-           <th>Action</th>
-         </tr>
-       </thead>
-       <tbody>{recordList()}</tbody>
-     </table>
-   </div>
- );
+  <div className="page2Container"> 
+    <h1>TRAVEL BUDDIES</h1>
+    <p>These are the people you might want to travel with:</p>
+    <div >
+      {r}
+    </div>
+    
+  </div>
+  
+);
 }

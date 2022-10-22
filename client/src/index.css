@@ -1,0 +1,51 @@
+@font-face{
+    font-family: "iceland" ;
+    src: url('iceland-regular-webfont.woff2') format('woff2'),
+         url('iceland-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+body{
+    font-family:"iceland";
+    background-image:url("backimg.png");
+}
+.leaveTimeBox{
+    display:flex;
+
+}
+
+.page2Container{
+    display:flex; 
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+}
+.boxContainerBig{
+    display:flex; 
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width:2000px;
+    height: 570px;
+}
+.boxContainer{
+    height:270px;
+    width:1000px;
+    background-color:#EAE8D8;
+    display:flex;
+    margin-top: 30px;
+    overflow-y: auto;
+    max-height: 180px;
+  
+    
+    
+}
+.commentBox{
+    display: flex;
+    width:50px;
+    overflow: auto;
+}
