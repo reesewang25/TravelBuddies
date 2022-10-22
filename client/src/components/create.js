@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import * as recent from "./mostRecent"
+
  
 export default function Create() {
  const [form, setForm] = useState({
@@ -40,7 +42,8 @@ export default function Create() {
      window.alert(error);
      return;
    });
- 
+   recent.globalArray[0]=form.date;
+
    setForm({ name: "",
    phoneNumber: "",
    gtEmail: "",
@@ -50,7 +53,8 @@ export default function Create() {
    flightTime:"",
    location:"",
    comment:"" });
-   navigate("/");
+   
+   navigate("/recommend");
  }
  
  // This following section will display the form that takes the input from the user.
