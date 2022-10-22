@@ -22,6 +22,7 @@ export default function Create() {
  
    // When a post request is sent to the create url, we'll add a new record to the database.
    const newPerson = { ...form };
+   const personPosition = newPerson.position;
  
    await fetch("http://localhost:4000/record/add", {
      method: "POST",
@@ -35,7 +36,7 @@ export default function Create() {
      return;
    });
  
-   setForm({ name: "", position: "", level: "" });
+   setForm({ name: "", position: "", level: "" });//sets form back to blank
    navigate("/recommend");
  }
  

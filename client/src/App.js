@@ -19,6 +19,7 @@ const App = () => {
        <Route path="/edit/:id" element={<Edit />} />
        <Route path="/create" element={<Create />} />
        <Route path="/recommend" element={<Recommend />} />
+       
      </Routes>
    </div>
  );
