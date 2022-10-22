@@ -24,10 +24,9 @@ recordRoutes.route("/record").get(function (req, res) {
    });
 });
 
-recordRoutes.route("/filter").get(function(req,res){
+recordRoutes.route("/filter/:level").get(function(req,res){
     let db_connect = dbo.getDb();
-    let myquery = {position:"Intern"}
-
+    let myquery = {level:req.params.level}
     db_connect.collection("records").find(myquery).toArray(function (err,result){
         if (err) throw err;
         res.json(result);
