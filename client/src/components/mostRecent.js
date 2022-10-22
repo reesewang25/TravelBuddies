@@ -1,0 +1,2 @@
+var globalArray = [];
+export {globalArray}

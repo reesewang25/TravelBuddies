@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import * as recent from "./mostRecent";
 
 //"object" record- what a record looks like
 const Record = (props) => (
@@ -12,13 +13,13 @@ const Record = (props) => (
     </tr>
 );
 
-export default function RecordList() {
+export default function RecordList(level) {
     const [records, setRecords] = useState([]);
     
     // This method fetches the records from the database.
     useEffect(() => {
-      async function getRecords() {
-        const response = await fetch(`http://localhost:4000/filter/`);
+      async function getRecords(level) {
+        const response = await fetch(`http://localhost:4000/filter/${level}`);
     
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;
@@ -29,13 +30,9 @@ export default function RecordList() {
         const records = await response.json();
         setRecords(records);
       }
-    
-      getRecords();
-    
+        getRecords(recent.globalArray[0]);
       return;
     }, [records.length]);
-    
-    
     
     
     // This method will map out the records on the table

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
- 
+import App from "../App";
+import * as recent from "./mostRecent"
+
 export default function Create() {
  const [form, setForm] = useState({
    name: "",
    position: "",
    level: "",
  });
+
  const navigate = useNavigate();
  
  // These methods will update the state properties.
@@ -15,7 +18,7 @@ export default function Create() {
      return { ...prev, ...value };
    });
  }
- 
+
  // This function will handle the submission.
  async function onSubmit(e) {
    e.preventDefault();
@@ -34,11 +37,10 @@ export default function Create() {
      window.alert(error);
      return;
    });
- 
+   recent.globalArray[0]=form.level;
    setForm({ name: "", position: "", level: "" });
    navigate("/recommend");
  }
- 
  // This following section will display the form that takes the input from the user.
  return (
    <div>
