@@ -31,8 +31,8 @@ export default function RecordList(date) {
    });//added semicolon
     // This method fetches the records from the database.
     useEffect(() => {
-      async function getRecords(date) {
-        const response = await fetch(`http://localhost:4000/filter/${date}`);
+      async function getRecords(date, gtEmail) {
+        const response = await fetch(`http://localhost:4000/filter/${date}/${gtEmail}`);
     
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;
@@ -43,7 +43,7 @@ export default function RecordList(date) {
         const records = await response.json();
         setRecords(records);
       }
-        getRecords(recent.globalArray[0]);
+        getRecords(recent.globalArray[0], recent.globalArray2[0]);
       return;
     }, [records.length]);
     

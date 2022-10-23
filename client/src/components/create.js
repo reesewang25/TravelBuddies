@@ -43,6 +43,7 @@ export default function Create() {
      return;
    });
    recent.globalArray[0]=form.date;
+   recent.globalArray2[0] = form.gtEmail;
 
    setForm({ name: "",
    phoneNumber: "",
