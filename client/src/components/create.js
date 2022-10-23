@@ -112,6 +112,7 @@ export default function Create() {
            id="leavingTimeFrom"
            value={form.leavingTimeFrom}
            onChange={(e) => updateForm({ leavingTimeFrom: e.target.value })}>
+            <option value="null">Select</option>
             <option value="24:00">24:00</option>
                           <option value="24:30">24:30</option>
                           <option value="01:00">01:00</option>
@@ -170,6 +171,7 @@ export default function Create() {
            id="leavingTimeTo"
            value={form.leavingTimeTo}
            onChange={(e) => updateForm({ leavingTimeTo: e.target.value })}>
+            <option value="null">Select</option>
             <option value="24:00">24:00</option>
                           <option value="24:30">24:30</option>
                           <option value="01:00">01:00</option>
@@ -239,6 +241,7 @@ export default function Create() {
            id="location"
            value={form.location}
            onChange={(e) => updateForm({ location: e.target.value })}>
+            <option value="null">Select</option>
             <option value="East" >East</option>
             <option value="West">West</option>
            </select>
