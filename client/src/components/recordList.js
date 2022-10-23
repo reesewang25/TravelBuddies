@@ -81,7 +81,7 @@ export default function RecordList() {
  return (
   <div className="page2Container"> 
     <h1>TRAVEL BUDDIES</h1>
-    <p>These are the people you might want to travel with:</p>
+    <h4>These are the people you might want to travel with:</h4>
     <div >
       {r}
     </div>

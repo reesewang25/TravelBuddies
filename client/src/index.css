@@ -10,9 +10,14 @@
 body{
     font-family:"iceland";
     background-color:#3AAFA9;
+    font-size:20px;
+    color:#4F4547;
+
 }
 .leaveTimeBox{
     display:flex;
+    width:200px;
+    justify-content: space-between;
 
 }
 
@@ -30,22 +35,152 @@ body{
     flex-direction: column;
     justify-content: space-between;
     width:2000px;
-    height: 570px;
+    height: 700px;
+    
 }
 .boxContainer{
-    height:270px;
-    width:1000px;
+    height:800px;
+    width:600px;
     background-color:#DEF2F1;
     display:flex;
     margin-top: 30px;
     overflow-y: auto;
     max-height: 180px;
-  
+    margin-bottom:30px;
+    border-radius: 15px;
+    padding:10px;
+    flex-direction:column;
     
     
 }
+.boxBody{
+    display:flex;
+    justify-content: space-between;
+
+}
+#boxName{
+    grid-area: boxname;
+}
+#boxPhone{
+    grid-area:boxphoneNumber;
+}
+#boxEmail{
+    grid-area:boxgtemail;
+}
+#boxDate{
+    grid-area:boxdate;
+}
+#boxLeavingTime{
+    grid-area:boxleavingtime;
+}
+#boxFlightTime{
+    grid-area:boxflighttime;
+}
+#boxLocation{
+    grid-area:boxlocation;
+}
+#boxComment{
+    grid-area:boxcomments;
+}
+
 .commentBox{
     display: flex;
     width:50px;
     overflow: auto;
 }
+.addTravel{
+    font-size: 30px;
+    color:#4F4547;
+    
+}
+
+.createContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top:15px;
+    padding-bottom:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+.createFormContainer{
+    display:grid;
+    grid-template-areas: 
+    "Name TimeRange "
+    "Phone FlightTime "
+    "Email Location "
+    "Date Comments ";
+    width: 1000px;
+    height:500px;
+    margin-top:30px;
+    
+
+}
+#name{
+    grid-area: Name;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+
+}
+#timeRange{
+    grid-area: TimeRange;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#phoneNumber{
+    grid-area: Phone;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#gtEmail{
+    grid-area: Email;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#date{
+    grid-area: Date;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#flightTime{
+    grid-area: FlightTime;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#location{
+    grid-area: Location;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#comment{
+    grid-area: Comments;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.go{
+    margin-left:47%;
+}
+.form-control {
+    width:50%;
+    
+}
+
+.barContainer {
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    
+}
+

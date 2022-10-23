@@ -11,9 +11,7 @@ export default function Navbar() {
  return (
    <div>
      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-       <NavLink className="navbar-brand" to="/">
-       <img style={{"width" : 25 + '%'}} src="./NavBarImg.png"></img>
-       </NavLink>
+       
        <button
          className="navbar-toggler"
          type="button"
@@ -25,16 +23,23 @@ export default function Navbar() {
        >
          <span className="navbar-toggler-icon"></span>
        </button>
- 
+       <nav className="barContainer">
        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul className="navbar-nav ml-auto">
-           <li className="nav-item">
-             <NavLink className="nav-link" to="/create" >
-               Add Travel Info
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link addTravelInfoStyle" to="/create" style={{textDecoration: 'none'}} >
+               <p className="addTravel">Add Travel Info</p>
              </NavLink>
            </li>
          </ul>
        </div>
+       <NavLink className="navbar-brand navLinkStyle" to="/">
+          <img style={{"width" : 25 + '%'}} src="./NavBarImg.png"></img>
+        </NavLink>
+        
+       </nav>
+        
+       
      </nav>
    </div>
  );

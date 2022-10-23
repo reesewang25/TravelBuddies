@@ -60,20 +60,22 @@ export default function Create() {
  
  // This following section will display the form that takes the input from the user.
  return (
-   <div>
-     <h3>Create New Record</h3>
-     <form onSubmit={onSubmit}>
-       <div className="form-group">
-         <label htmlFor="name">Name</label>
+   <div class="createContainer">
+     <h2 >Your Travel Info</h2>
+     <form onSubmit={onSubmit} >
+      <div className="createFormContainer">
+      <div className="form-group" id="name">
+         <label htmlFor="name" >Name</label>
          <input
            type="text"
-           className="form-control"
+           className="form-control nameStyle"
            id="name"
            value={form.name}
            onChange={(e) => updateForm({ name: e.target.value })}
+           required="required"
          />
        </div>
-       <div className="form-group">
+       <div className="form-group" id="phoneNumber">
          <label htmlFor="phoneNumber">Phone Number:</label>
          <input
            type="text"
@@ -81,9 +83,10 @@ export default function Create() {
            id="phoneNumber"
            value={form.phoneNumber}
            onChange={(e) => updateForm({ phoneNumber: e.target.value })}
+           required="required"
          />
        </div>
-       <div className="form-group">
+       <div className="form-group" id="gtEmail">
          <label htmlFor="gtEmail">GT Email:</label>
          <input
           placeholder="xxx@gatech.edu"
@@ -92,23 +95,29 @@ export default function Create() {
            id="gtEmail"
            value={form.gtEmail}
            onChange={(e) => updateForm({ gtEmail: e.target.value })}
+           required="required"
          />
        </div>
-       <div className="form-group">
+       <div className="form-group" id="date">
          <label htmlFor="date">Date:</label>
          <input
+          placeholder="(ie. October 22, 2022)"
            type="text"
            className="form-control"
            id="date"
            value={form.date}
            onChange={(e) => updateForm({ date: e.target.value })}
+           required="required"
          />
        </div>
-       <p>Leaving Time Range:</p>
-       <div className="leaveTimeBox">
+      <div id="timeRange">
+       <p style={{margin:0}}>Leaving Time Range:</p>
+       <div className="leaveTimeBox" >
        <div className="form-group">
-         <label htmlFor="leavingTimeFrom">from</label>
-         <select type="text"
+         <label htmlFor="leavingTimeFrom">Earliest</label>
+         <select 
+         style = {{width:65}}
+          type="text"
            className="form-control"
            id="leavingTimeFrom"
            value={form.leavingTimeFrom}
@@ -165,9 +174,11 @@ export default function Create() {
            </select>
        </div>
       
-       <div className="form-group">
-         <label htmlFor="leavingTimeTo">to</label>
-         <select type="text"
+       <div className="form-group ">
+         <label htmlFor="leavingTimeTo">Latest</label>
+         <select 
+           style = {{width:65}}
+           type="text"
            className="form-control"
            id="leavingTimeTo"
            value={form.leavingTimeTo}
@@ -224,10 +235,12 @@ export default function Create() {
            </select>
        </div>
        </div>
-       
-       <div className="form-group">
+       </div>
+
+       <div className="form-group" id="flightTime">
          <label htmlFor="flightTime">Time of Flight:</label>
          <input
+          required="required"
            type="text"
            className="form-control"
            id="flightTime"
@@ -235,7 +248,7 @@ export default function Create() {
            onChange={(e) => updateForm({ flightTime: e.target.value })}
          />
        </div>
-       <div className="form-group">
+       <div className="form-group" id="location">
          <label htmlFor="location">On Campus Location:</label>
          <select type="text"
            className="form-control"
@@ -249,9 +262,11 @@ export default function Create() {
         
        </div>
 
-       <div className="form-group">
+       <div className="form-group" id="comment">
          <label htmlFor="comment">Comments:</label>
-         <textarea type="text"
+         <textarea 
+         placeholder="Add some comments..."
+          type="text"
            className="form-control"
            id="comment"
            value={form.comment}
@@ -259,8 +274,11 @@ export default function Create() {
            </textarea>
 
        </div>
+      
+      </div>
        
-       <div className="form-group">
+
+       <div className="form-group go " >
          <input
            type="submit"
            value="GO"
