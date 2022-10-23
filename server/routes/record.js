@@ -24,9 +24,9 @@ recordRoutes.route("/record").get(function (req, res) {
    });
 });
 
-recordRoutes.route("/filter/:date").get(function(req,res){
+recordRoutes.route("/filter/:date/:gtEmail").get(function(req,res){
     let db_connect = dbo.getDb();
-    let myquery = {date:req.params.date}
+    let myquery = {"$and":[{gtEmail:{"$ne":req.params.gtEmail}},{date: req.params.date}]}
     db_connect.collection("records").find(myquery).toArray(function (err,result){
         if (err) throw err;
         res.json(result);
